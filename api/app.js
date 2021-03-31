@@ -1,17 +1,14 @@
 import { createServer } from 'http'
-import express from 'express'
-import cors from 'cors'
 import socketIO from 'socket.io'
 
-const app = express()
-const server = createServer(app)
-const io = socketIO(server)
-
-app.use(cors())
-
-// TODO: temporary, remove later when we have a front-end
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html')
+const server = createServer()
+const io = new socketIO.Server(server, {
+  path: '/',
+  serveClient: false,
+  cors: {
+    origin: 'http://localhost:3001',
+    methods: ['GET', 'POST']
+  }
 })
 
 let usersConnected = []

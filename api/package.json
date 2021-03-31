@@ -1,6 +1,9 @@
 {
   "name": "learn-japanese-game-api",
+  "description": "Learn Japanese Game API",
+  "private": true,
   "version": "0.0.0",
+  "author": "Rafael Silva <rafaelfsilva1@gmail.com>",
   "scripts": {
     "start": "node -r esm app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,9 +14,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "cors": "^2.8.5",
     "esm": "^3.2.25",
-    "express": "^4.17.1",
-    "socket.io": "^2.3.0"
+    "socket.io": "^4.0.0"
   }
 }

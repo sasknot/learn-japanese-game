@@ -1,7 +1,4 @@
-node_modules
-
-# OS generated files #
-######################
+# OS generated files
 .DS_Store
 .DS_Store?
 ._*
@@ -9,3 +6,11 @@ node_modules
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# api
+api/node_modules
+
+# web
+web/node_modules
+web/dist
+web/dist-ssr
