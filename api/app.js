@@ -1,12 +1,14 @@
 import { createServer } from 'http'
 import socketIO from 'socket.io'
 
+const apiUrl = process.env.API_URL || 'http://localhost:3000'
+const webUrl = process.env.WEB_URL || 'http://localhost:3001'
 const server = createServer()
 const io = new socketIO.Server(server, {
   path: '/',
   serveClient: false,
   cors: {
-    origin: 'http://localhost:3001',
+    origin: webUrl,
     methods: ['GET', 'POST']
   }
 })
@@ -41,5 +43,5 @@ io.on('connect', (socket) => {
 })
 
 server.listen(3000, () => {
-  console.info('API listening at http://localhost:3000')
+  console.info(`API listening at ${apiUrl}`)
 })
